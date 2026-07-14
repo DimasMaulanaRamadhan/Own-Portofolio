@@ -1,41 +1,165 @@
+import { motion } from "framer-motion";
+
+import ContactInfo from "../contact/ContactInfo";
+import ArtifactCard from "../contact/ArtifactCard";
+
+import { contactInfo, artifacts } from "../contact/contactData";
+
 export default function Contact() {
   return (
     <>
-      <section id="contact" className="text-center border-t border-line max-w-[1100px] mx-auto px-6 py-30">
-        <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-          Leave your mark
-        </p>
-        <h2 className="font-display text-2xl md:text-3xl text-goldBright">
-          Tinggalkan tanda summon
-        </h2>
+      <section
+        id="contact"
+        className="
+          relative
+          max-w-[1100px]
+          mx-auto
+          px-6
+          md:px-0
+          py-28
+          border-t
+          border-line
+        "
+      >
+        {/* Background Ornament */}
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+          <div className="h-full w-full bg-[radial-gradient(circle_at_center,#c7a96b_1px,transparent_1px)] [background-size:28px_28px]" />
+        </div>
 
-        <div className="mt-8 flex flex-col gap-2.5 items-center">
-          <a
-            href="mailto:dimasramadhan1866@gmail.com"
-            className="text-gold hover:text-goldBright text-base"
-          >
-            dimasramadhan1866@gmail.com
-          </a>
-          <a
-            href="tel:+6281231471866"
-            className="text-gold hover:text-goldBright text-base"
-          >
-            +62 812 3147 1866
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dimasmaulanaramadhan"
-            target="_blank"
-            rel="noreferrer"
-            className="text-gold hover:text-goldBright text-base"
-          >
-            linkedin.com/in/dimasmaulanaramadhan
-          </a>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="relative mb-14"
+        >
+          <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
+            Final Checkpoint
+          </p>
+
+          <h2 className="font-display text-3xl md:text-4xl text-goldBright uppercase tracking-[2px]">
+            Summon
+          </h2>
+
+          <div className="mt-4 h-px w-20 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
+        </motion.div>
+
+        {/* Main Layout */}
+
+        <div className="relative z-10 grid lg:grid-cols-[1.2fr_0.9fr] gap-10">
+          {/* Left */}
+
+          <ContactInfo info={contactInfo} />
+
+          {/* Right */}
+
+          <div className="space-y-5">
+            <motion.p
+              initial={{
+                opacity: 0,
+                x: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+              className="
+                font-display
+                text-xs
+                uppercase
+                tracking-[4px]
+                text-gold
+              "
+            >
+              Artifacts
+            </motion.p>
+
+            {artifacts.map((artifact) => (
+              <ArtifactCard key={artifact.id} artifact={artifact} />
+            ))}
+          </div>
         </div>
       </section>
 
-      <footer className="text-center py-10 text-muted text-xs tracking-[2px] border-t border-line">
-        © 2026 — Dimas Maulana Ramadhan
+      {/* ================= FOOTER ================= */}
+
+      <footer
+        className="
+          border-t
+          border-line
+          py-12
+          px-6
+        "
+      >
+        <div className="max-w-[1100px] mx-auto text-center">
+          <p
+            className="
+              font-display
+              uppercase
+              tracking-[4px]
+              text-gold
+              text-xs
+              mb-3
+            "
+          >
+            Quest Complete
+          </p>
+
+          <p
+            className="
+              text-parchment/70
+              leading-7
+              max-w-xl
+              mx-auto
+            "
+          >
+            Thank you for exploring my journey. Every project, challenge, and
+            achievement shared here represents another step toward becoming a
+            better software developer.
+          </p>
+
+          <div
+            className="
+              mt-8
+              flex
+              justify-center
+              flex-wrap
+              gap-3
+            "
+          >
+          </div>
+
+          <div className="mt-10 h-px bg-line" />
+
+          <p
+            className="
+              mt-8
+              text-xs
+              tracking-[2px]
+              uppercase
+              text-muted
+            "
+          >
+            © 2026 • Dimas Maulana Ramadhan
+          </p>
+        </div>
       </footer>
     </>
-  )
+  );
 }
