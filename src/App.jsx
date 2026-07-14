@@ -4,7 +4,7 @@ import TitleScreen from "./components/layout/TitleScreen";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/layout/Hero";
 import About from "./components/layout/About";
-import Trials from "./components/layout/Trials";
+import JourneyLog from "./components/layout/JourneyLog";
 import SkillTree from "./components/layout/SkillTree";
 import Projects from "./components/layout/Projects";
 import Contact from "./components/layout/Contact";
@@ -34,7 +34,7 @@ export default function App() {
       <TitleScreen onStart={handleStart} />
       <Hero />
       <About />
-      <Trials />
+      <JourneyLog />
       <Projects />
       <SkillTree />
       <Contact />
