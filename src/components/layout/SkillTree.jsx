@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import skillTreeData from "../skilltree/skillTreeData";
-
+import MobileSkillTree from "../skilltree/MobileSkillTree";
 import TreeNode from "../skilltree/TreeNode";
 import TreeEdge from "../skilltree/TreeEdge";
 import SkillDetail from "../skilltree/SkillDetail";
@@ -14,17 +14,14 @@ export default function SkillTree() {
 
   const nodeMap = useMemo(() => {
     const map = {};
-
     nodes.forEach((node) => {
       map[node.id] = node;
     });
-
     return map;
   }, [nodes]);
 
   function isEdgeActive(fromId, toId) {
     if (!selected) return false;
-
     return selected.id === fromId || selected.id === toId;
   }
 
@@ -39,8 +36,7 @@ export default function SkillTree() {
         py-32
       "
     >
-      {/* Background */}
-
+      {/* ================= Background ================= */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
           className="
@@ -52,21 +48,12 @@ export default function SkillTree() {
         />
       </div>
 
+      {/* ================= Heading ================= */}
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 25,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-        }}
-        transition={{
-          duration: 0.6,
-        }}
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
         className="relative mb-16"
       >
         <p
@@ -108,44 +95,46 @@ export default function SkillTree() {
         />
       </motion.div>
 
+      {/* ================================================= */}
+      {/* DESKTOP LAYOUT */}
+      {/* ================================================= */}
       <div
         className="
+          hidden
+          lg:grid
           relative
           z-10
-
-          grid
           xl:grid-cols-[1.6fr_0.9fr]
           gap-8
           items-start
         "
       >
-
         {/* LEFT PANEL */}
-
         <motion.div
-          initial={{
-            opacity: 0,
-            x: -30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.6,
-          }}
-          className="rounded-2xl border border-line bg-panel p-4 min-h-[770px] flex items-center justify-center overflow-auto"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="
+            rounded-2xl
+            border
+            border-line
+            bg-panel
+            p-4
+            min-h-[770px]
+            flex
+            items-center
+            justify-center
+            overflow-auto
+          "
         >
-          <svg viewBox="0 0 720 620" className="min-w-[720px] w-full h-full">
-
+          <svg
+            viewBox="0 0 720 620"
+            className="min-w-[720px] w-full h-full"
+          >
             {/* EDGES */}
-
             {edges.map(([fromId, toId]) => {
               const from = nodeMap[fromId];
-
               const to = nodeMap[toId];
 
               return (
@@ -159,7 +148,6 @@ export default function SkillTree() {
             })}
 
             {/* NODES */}
-
             {nodes.map((node) => (
               <TreeNode
                 key={node.id}
@@ -170,7 +158,6 @@ export default function SkillTree() {
                     setSelected(null);
                     return;
                   }
-
                   setSelected(clickedNode);
                 }}
               />
@@ -179,19 +166,10 @@ export default function SkillTree() {
         </motion.div>
 
         {/* RIGHT PANEL */}
-
         <motion.div
-          initial={{
-            opacity: 0,
-            x: 30,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.6,
             delay: 0.15,
@@ -201,23 +179,25 @@ export default function SkillTree() {
         </motion.div>
       </div>
 
-      {/* LEGEND */}
+      {/* ================================================= */}
+      {/* MOBILE LAYOUT */}
+      {/* ================================================= */}
+      <div className="lg:hidden relative z-10">
+        {/* Detail duplikat di bawah sudah dihapus, sekarang murni diatur oleh MobileSkillTree */}
+        <MobileSkillTree 
+          nodes={nodes} 
+          selected={selected} 
+          setSelected={setSelected} 
+          SkillDetail={SkillDetail}
+        />
+      </div>
 
+      {/* ================= Legend ================= */}
       <motion.div
-        initial={{
-          opacity: 0,
-          y: 15,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-        }}
-        transition={{
-          delay: 0.45,
-        }}
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.45 }}
         className="
           mt-8
           mb-[-95px]
@@ -232,11 +212,8 @@ export default function SkillTree() {
         "
       >
         <Legend color="#E0916B" label="Web Development" />
-
         <Legend color="#6BC4A4" label="Game Development" />
-
         <Legend color="#7BB0D6" label="Artificial Intelligence" />
-
         <Legend color="#C99A52" label="Core Skill" />
       </motion.div>
     </section>
@@ -245,27 +222,15 @@ export default function SkillTree() {
 
 function Legend({ color, label }) {
   return (
-    <div
-      className="
-        flex
-        items-center
-        gap-3
-      "
-    >
+    <div className="flex items-center gap-3">
       <span
-        className="
-          h-3
-          w-3
-          rounded-full
-          border
-        "
+        className="h-3 w-3 rounded-full border"
         style={{
           backgroundColor: color,
           borderColor: color,
           boxShadow: `0 0 12px ${color}`,
         }}
       />
-
       <span
         className="
           text-sm

@@ -68,10 +68,10 @@ export default function Hero() {
       <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
         Character sheet
       </p>
-      <h1 className="font-display text-4xl md:text-5xl font-semibold text-goldBright tracking-wide">
+      <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-goldBright tracking-wide">
         Dimas Maulana Ramadhan
       </h1>
-      <p className="text-sm md:text-base tracking-[3px] text-muted uppercase mt-4">
+      <p className="text-sm md:text-base tracking-[2px] max-w-xs md:max-w-none mx-auto text-muted uppercase mt-4">
         Frontend Developer · Informatics Engineer
       </p>
 

@@ -27,7 +27,7 @@ const rankStyle = {
 };
 
 export default function ProjectHeader({ project, open, index, onClick }) {
-  const rank = rankStyle[project.rank] || rankStyle.Common;
+  const rank = rankStyle[project.rank] || rankStyle.Normal;
 
   return (
     <button
@@ -35,16 +35,17 @@ export default function ProjectHeader({ project, open, index, onClick }) {
       className="
         group
         w-full
-        py-7
+        py-6
         flex
-        items-center
+        items-start
         justify-between
+        gap-4
         text-left
       "
     >
-      {/* Left */}
+      {/* ================= LEFT ================= */}
 
-      <div className="flex items-start gap-6">
+      <div className="flex flex-1 min-w-0 items-start gap-4 md:gap-6">
         {/* Number */}
 
         <motion.div
@@ -52,8 +53,10 @@ export default function ProjectHeader({ project, open, index, onClick }) {
             color: open ? "#E8C77A" : "#6f5a35",
           }}
           className="
+            shrink-0
             font-display
-            text-4xl
+            text-3xl
+            md:text-4xl
             leading-none
             select-none
           "
@@ -63,7 +66,7 @@ export default function ProjectHeader({ project, open, index, onClick }) {
 
         {/* Info */}
 
-        <div>
+        <div className="min-w-0 flex-1">
           <p
             className="
               text-[10px]
@@ -82,54 +85,61 @@ export default function ProjectHeader({ project, open, index, onClick }) {
             }}
             className="
               font-display
-              text-2xl
+              text-xl
+              md:text-2xl
+              leading-snug
+              break-words
               mb-2
             "
           >
             {project.name}
           </motion.h3>
 
-          <div className="flex flex-wrap gap-3 items-center">
-            <span
-              className="
-                text-sm
-                text-muted
-              "
-            >
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span className="text-sm text-muted">
               {project.category}
             </span>
 
-            <span className="text-line">•</span>
+            <span className="text-line hidden sm:inline">
+              •
+            </span>
 
-            <span
-              className="
-                text-sm
-                text-muted
-              "
-            >
+            <span className="text-sm text-muted">
               {project.year}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Right */}
+      {/* ================= RIGHT ================= */}
 
-      <div className="flex items-center gap-5">
-        {/* Rank */}
-
+      <div
+        className="
+          flex
+          shrink-0
+          flex-col
+          items-end
+          justify-between
+          gap-3
+          sm:flex-row
+          sm:items-center
+        "
+      >
         <motion.div
           whileHover={{
             scale: 1.05,
           }}
           className={`
-            px-4
-            py-2
+            px-3
+            py-1.5
+            md:px-4
+            md:py-2
             rounded-full
             border
-            text-xs
+            text-[11px]
             uppercase
             tracking-[3px]
+            whitespace-nowrap
             ${rank.color}
             ${rank.border}
             ${rank.bg}
@@ -137,8 +147,6 @@ export default function ProjectHeader({ project, open, index, onClick }) {
         >
           {project.rank}
         </motion.div>
-
-        {/* Arrow */}
 
         <motion.div
           animate={{
@@ -149,7 +157,9 @@ export default function ProjectHeader({ project, open, index, onClick }) {
           }}
           className="
             text-gold
-            text-3xl
+            text-2xl
+            md:text-3xl
+            leading-none
           "
         >
           ›
