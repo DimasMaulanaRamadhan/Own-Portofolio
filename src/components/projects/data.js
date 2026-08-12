@@ -64,7 +64,7 @@ const projects = [
 
     images: [theTani1, theTani2],
 
-    tech: ["Roblox Studio", "Blender"],
+    tech: ["Roblox Studio"],
 
     detail:
       "A 3D farming simulation RPG that introduces sustainable agriculture through immersive gameplay and strategic farm management. The game features crop cultivation, soil health monitoring, technology progression, dynamic market systems, and ecosystem management to provide an engaging and educational farming experience.",
