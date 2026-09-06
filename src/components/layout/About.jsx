@@ -44,7 +44,7 @@ export default function About() {
           <div className="border-l-2 border-ember pl-6 space-y-6 italic text-parchment/90 text-sm md:text-base leading-8">
             <p>
               I am an Informatics Engineering fresh graduate from Universitas
-              Negeri Malang with a strong interest in web development, UI/UX
+              Negeri Malang with a strong interest in web development, game development, UI/UX
               design, and AI-powered applications.
             </p>
 

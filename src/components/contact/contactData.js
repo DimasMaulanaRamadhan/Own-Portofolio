@@ -1,5 +1,5 @@
 export const contactInfo = {
-    email: "dimasramadhan1866@gmail.com",
+    email: "dimasmaulana.ramadhan10@gmail.com",
 
     phone: "+62 812 3147 1866",
 
@@ -9,7 +9,7 @@ export const contactInfo = {
         "Every project, challenge, and achievement showcased throughout this portfolio represents a step in my journey as a software developer. If you're looking for someone who enjoys building modern web applications, game experiences, and user-centered digital products, I'd be excited to contribute to your next adventure.",
 
     availableFor: [
-        "Frontend Web Development",
+        "Web Development",
         "Game Development",
         "UI/UX Design",
     ],
@@ -62,7 +62,7 @@ export const artifacts = [
 
         button: "Download CV",
 
-        url: "/files/CV - Dimas Maulana Ramadhan.pdf",
+        url: "/files/CV_Dimas Maulana Ramadhan.pdf",
 
         external: false,
     },

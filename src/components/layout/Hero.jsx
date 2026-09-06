@@ -72,7 +72,7 @@ export default function Hero() {
         Dimas Maulana Ramadhan
       </h1>
       <p className="text-sm md:text-base tracking-[2px] max-w-xs md:max-w-none mx-auto text-muted uppercase mt-4">
-        Frontend Developer · Informatics Engineer
+        Informatics Engineer · Web Developer · Game Development Enthusiast
       </p>
 
       <a
