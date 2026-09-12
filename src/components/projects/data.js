@@ -66,6 +66,8 @@ const projects = [
 
     tech: ["Roblox Studio"],
 
+    link: "https://www.roblox.com/id/games/110896719203315/The-Tani",
+
     detail:
       "A 3D farming simulation RPG that introduces sustainable agriculture through immersive gameplay and strategic farm management. The game features crop cultivation, soil health monitoring, technology progression, dynamic market systems, and ecosystem management to provide an engaging and educational farming experience.",
   },

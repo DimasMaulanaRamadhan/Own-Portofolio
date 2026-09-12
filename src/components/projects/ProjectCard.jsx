@@ -150,6 +150,25 @@ export default function ProjectCard({
                   </p>
                 </div>
 
+                {project.link && (
+                  <div>
+                    <p className="text-xs uppercase tracking-[3px] text-gold mb-3">
+                      Portal
+                    </p>
+
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gold/30 bg-gold/5 text-goldBright text-sm uppercase tracking-[2px] transition duration-300 hover:bg-gold/15 hover:border-gold/60 hover:shadow-[0_0_12px_rgba(232,199,122,0.2)]"
+                    >
+                      <span>▶</span>
+                      <span>Play Now</span>
+                    </a>
+                  </div>
+                )}
+
               </div>
             </div>
           </motion.div>
