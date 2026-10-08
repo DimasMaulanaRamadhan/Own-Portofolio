@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaTimes } from "react-icons/fa";
 
+import useLang from "../../i18n/useLang";
 import ChapterCard from "../journey/ChapterCard";
 import TimelineItem from "../journey/TimelineItem";
 import AchievementCard from "../journey/AchievementCard";
@@ -12,6 +14,8 @@ import {
 } from "../journey/journeyData";
 
 export default function JourneyLog() {
+  const { t } = useLang();
+
   // ===========================
   // Accordion State
   // ===========================
@@ -27,6 +31,17 @@ export default function JourneyLog() {
   // ===========================
 
   const [previewImage, setPreviewImage] = useState(null);
+
+  useEffect(() => {
+    if (!previewImage) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setPreviewImage(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [previewImage]);
 
   return (
     <>
@@ -50,18 +65,15 @@ export default function JourneyLog() {
           className="relative mb-16"
         >
           <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-            Journey Log
+            {t("journey.eyebrow")}
           </p>
 
           <h2 className="font-display text-3xl md:text-4xl text-goldBright font-bold uppercase tracking-[2px]">
-            Chronicles of Growth
+            {t("journey.title")}
           </h2>
 
           <p className="mt-5 max-w-3xl leading-8 text-parchment/75">
-            Every completed quest has shaped my knowledge, experience, and
-            professional growth. From academic foundations to real-world
-            software development, each milestone represents another chapter of
-            the journey.
+            {t("journey.intro")}
           </p>
 
           <div className="mt-6 h-px w-24 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
@@ -75,10 +87,10 @@ export default function JourneyLog() {
           {/* ========================================================= */}
 
           <ChapterCard
-            chapter="Chapter I"
-            title="Academic Journey"
-            tagline="The First Steps"
-            summary={`${academicJourney.length} Milestones`}
+            chapter={t("journey.chapter1")}
+            title={t("journey.chapter1Title")}
+            tagline={t("journey.chapter1Tagline")}
+            summary={`${academicJourney.length} ${t("journey.milestones")}`}
             open={openedChapter === 1}
             onToggle={() => toggleChapter(1)}
           >
@@ -94,10 +106,10 @@ export default function JourneyLog() {
           {/* ========================================================= */}
 
           <ChapterCard
-            chapter="Chapter II"
-            title="Professional Journey"
-            tagline="Into the Real World"
-            summary={`${professionalJourney.length} Experience`}
+            chapter={t("journey.chapter2")}
+            title={t("journey.chapter2Title")}
+            tagline={t("journey.chapter2Tagline")}
+            summary={`${professionalJourney.length} ${t("journey.experience")}`}
             open={openedChapter === 2}
             onToggle={() => toggleChapter(2)}
           >
@@ -117,12 +129,10 @@ export default function JourneyLog() {
           {/* ========================================================= */}
 
           <ChapterCard
-            chapter="Chapter III"
-            title="Honors & Achievements"
-            tagline="Marks of Achievement"
-            summary={`${honorsAchievements.length} Achievement${
-              honorsAchievements.length > 1 ? "s" : ""
-            }`}
+            chapter={t("journey.chapter3")}
+            title={t("journey.chapter3Title")}
+            tagline={t("journey.chapter3Tagline")}
+            summary={`${honorsAchievements.length} ${t("journey.achievements")}`}
             open={openedChapter === 3}
             onToggle={() => toggleChapter(3)}
           >
@@ -181,9 +191,12 @@ export default function JourneyLog() {
                 transition
                 hover:border-gold
                 hover:rotate-90
+                flex
+                items-center
+                justify-center
               "
             >
-              ✕
+              <FaTimes />
             </button>
 
             {/* Image */}

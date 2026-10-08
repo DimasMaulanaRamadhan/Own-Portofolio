@@ -2,7 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import dimas from "../../assets/images/dimas.png";
 import dimas2 from "../../assets/images/dimas2.png";
 
+import useLang from "../../i18n/useLang";
+
 export default function Hero() {
+  const { t } = useLang();
   const [isFlipped, setIsFlipped] = useState(false);
 
   const isFlippedRef = useRef(false);
@@ -66,20 +69,20 @@ export default function Hero() {
       </div>
 
       <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-        Character sheet
+        {t("hero.characterSheet")}
       </p>
       <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-goldBright tracking-wide">
         Dimas Maulana Ramadhan
       </h1>
       <p className="text-sm md:text-base tracking-[2px] max-w-xs md:max-w-none mx-auto text-muted uppercase mt-4">
-        Informatics Engineer · Web Developer · Game Development Enthusiast
+        {t("hero.tagline")}
       </p>
 
       <a
         href="#about"
         className="mt-12 border border-gold text-gold font-display text-xs tracking-[2px] uppercase px-8 py-3 hover:bg-emberDark hover:text-goldBright transition-colors"
       >
-        Continue ↓
+        {t("hero.continue")}
       </a>
     </section>
   );

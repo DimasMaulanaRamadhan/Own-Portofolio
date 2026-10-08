@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
 import StatusBadge from "./StatusBadge";
 import TechBadge from "./TechBadge";
 import ProjectTimeline from "./ProjectTimeline";
@@ -12,6 +13,7 @@ export default function ProjectCard({
   onToggle,
   onPreview,
 }) {
+  const { t, pick } = useLang();
   const images = project.images || [project.image];
 
   return (
@@ -60,12 +62,12 @@ export default function ProjectCard({
                   />
 
                   <div className="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-md bg-black/70 px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] uppercase tracking-[1px] sm:tracking-[2px] text-goldBright">
-                    Screenshot I
+                    {t("modal.screenshot1")}
                   </div>
 
                   <div className="absolute inset-0 hidden sm:flex items-center justify-center bg-black/60 opacity-0 transition duration-300 group-hover:opacity-100">
                     <span className="font-display text-xs uppercase tracking-[4px] text-goldBright">
-                      Inspect
+                      {t("modal.inspect")}
                     </span>
                   </div>
                 </motion.div>
@@ -84,12 +86,12 @@ export default function ProjectCard({
                   />
 
                   <div className="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-md bg-black/70 px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] uppercase tracking-[1px] sm:tracking-[2px] text-goldBright">
-                    Screenshot II
+                    {t("modal.screenshot2")}
                   </div>
 
                   <div className="absolute inset-0 hidden sm:flex items-center justify-center bg-black/60 opacity-0 transition duration-300 group-hover:opacity-100">
                     <span className="font-display text-xs uppercase tracking-[4px] text-goldBright">
-                      Inspect
+                      {t("modal.inspect")}
                     </span>
                   </div>
                 </motion.div>
@@ -102,18 +104,18 @@ export default function ProjectCard({
                 <div className="grid grid-cols-2 gap-4 sm:gap-5">
 
                   <Info
-                    title="Class"
-                    value={project.role}
+                    title={t("project.class")}
+                    value={pick(project.role)}
                   />
 
                   <Info
-                    title="Realm"
+                    title={t("project.realm")}
                     value={project.platform}
                   />
 
                   <div className="col-span-2 sm:col-span-1">
                     <Info
-                      title="Quest Status"
+                      title={t("project.questStatus")}
                       value={<StatusBadge status={project.status} />}
                     />
                   </div>
@@ -127,7 +129,7 @@ export default function ProjectCard({
 
                 <div>
                   <p className="text-xs uppercase tracking-[3px] text-gold mb-3">
-                    Equipment
+                    {t("project.equipment")}
                   </p>
 
                   <div className="flex flex-wrap gap-2 sm:gap-3">
@@ -142,18 +144,18 @@ export default function ProjectCard({
 
                 <div>
                   <p className="text-xs uppercase tracking-[3px] text-gold mb-3">
-                    Lore
+                    {t("project.lore")}
                   </p>
 
                   <p className="text-parchment text-sm sm:text-base leading-7 sm:leading-8">
-                    {project.detail}
+                    {pick(project.detail)}
                   </p>
                 </div>
 
                 {project.link && (
                   <div>
                     <p className="text-xs uppercase tracking-[3px] text-gold mb-3">
-                      Portal
+                      {t("project.portal")}
                     </p>
 
                     <a
@@ -164,7 +166,7 @@ export default function ProjectCard({
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gold/30 bg-gold/5 text-goldBright text-sm uppercase tracking-[2px] transition duration-300 hover:bg-gold/15 hover:border-gold/60 hover:shadow-[0_0_12px_rgba(232,199,122,0.2)]"
                     >
                       <span>▶</span>
-                      <span>Play Now</span>
+                      <span>{t("project.playNow")}</span>
                     </a>
                   </div>
                 )}

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 const rankStyle = {
   Ultimate: {
     color: "text-yellow-300",
@@ -27,6 +29,7 @@ const rankStyle = {
 };
 
 export default function ProjectHeader({ project, open, index, onClick }) {
+  const { t, pick } = useLang();
   const rank = rankStyle[project.rank] || rankStyle.Normal;
 
   return (
@@ -76,7 +79,7 @@ export default function ProjectHeader({ project, open, index, onClick }) {
               mb-2
             "
           >
-            Boss Archive
+            {t("project.bossArchive")}
           </p>
 
           <motion.h3
@@ -97,7 +100,7 @@ export default function ProjectHeader({ project, open, index, onClick }) {
 
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span className="text-sm text-muted">
-              {project.category}
+              {pick(project.category)}
             </span>
 
             <span className="text-line hidden sm:inline">

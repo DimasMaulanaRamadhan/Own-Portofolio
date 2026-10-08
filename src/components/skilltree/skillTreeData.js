@@ -29,9 +29,9 @@ const skillTreeData = {
 
             label: "Web",
 
-            title: "Web Development",
+            title: { en: "Web Development", id: "Pengembangan Web" },
 
-            category: "Main Branch",
+            category: { en: "Main Branch", id: "Cabang Utama" },
 
             x: 120,
             y: 300,
@@ -42,14 +42,22 @@ const skillTreeData = {
 
             delay: 0.1,
 
-            description:
-                "Developing responsive and scalable web applications with modern frontend and backend technologies.",
+            description: {
+                en: "Developing responsive and scalable web applications with modern frontend and backend technologies.",
+                id: "Mengembangkan aplikasi web yang responsif dan skalabel dengan teknologi frontend dan backend modern.",
+            },
 
             usedIn: [
-                "Government Tourism Website",
+                {
+                    en: "Government Tourism Website",
+                    id: "Website Pariwisata Pemerintah",
+                },
                 "SIPETI",
                 "PTN Connect",
-                "Portfolio Website",
+                {
+                    en: "Portfolio Website",
+                    id: "Website Portofolio",
+                },
                 "Isna Collection",
             ],
 
@@ -70,7 +78,7 @@ const skillTreeData = {
 
             title: "React.js",
 
-            category: "Web Development",
+            category: { en: "Web Development", id: "Pengembangan Web" },
 
             x: 40,
             y: 500,
@@ -81,12 +89,20 @@ const skillTreeData = {
 
             delay: 0.2,
 
-            description:
-                "Used to build reusable user interfaces, component-based architecture, responsive layouts, and dynamic web applications.",
+            description: {
+                en: "Used to build reusable user interfaces, component-based architecture, responsive layouts, and dynamic web applications.",
+                id: "Digunakan untuk membangun antarmuka pengguna yang dapat digunakan ulang, arsitektur berbasis komponen, tata letak responsif, dan aplikasi web dinamis.",
+            },
 
             usedIn: [
-                "Government Tourism Website",
-                "Portfolio Website",
+                {
+                    en: "Government Tourism Website",
+                    id: "Website Pariwisata Pemerintah",
+                },
+                {
+                    en: "Portfolio Website",
+                    id: "Website Portofolio",
+                },
                 "SIPETI",
             ],
 
@@ -106,7 +122,7 @@ const skillTreeData = {
 
             title: "Laravel",
 
-            category: "Web Development",
+            category: { en: "Web Development", id: "Pengembangan Web" },
 
             x: 120,
             y: 500,
@@ -117,8 +133,10 @@ const skillTreeData = {
 
             delay: 0.25,
 
-            description:
-                "PHP framework used for backend development, authentication, routing, and RESTful API implementation.",
+            description: {
+                en: "PHP framework used for backend development, authentication, routing, and RESTful API implementation.",
+                id: "Framework PHP yang digunakan untuk pengembangan backend, autentikasi, routing, dan implementasi RESTful API.",
+            },
 
             usedIn: [
                 "SIPETI",
@@ -142,7 +160,7 @@ const skillTreeData = {
 
             title: "PHP",
 
-            category: "Programming Language",
+            category: { en: "Programming Language", id: "Bahasa Pemrograman" },
 
             x: 200,
             y: 500,
@@ -153,8 +171,10 @@ const skillTreeData = {
 
             delay: 0.3,
 
-            description:
-                "Backend programming language primarily used with Laravel for developing web applications.",
+            description: {
+                en: "Backend programming language primarily used with Laravel for developing web applications.",
+                id: "Bahasa pemrograman backend yang terutama digunakan bersama Laravel untuk mengembangkan aplikasi web.",
+            },
 
             usedIn: [
                 "SIPETI",
@@ -168,6 +188,89 @@ const skillTreeData = {
             ],
         },
 
+        {
+            id: "angularjs",
+
+            group: "web",
+
+            label: "Angular",
+
+            title: "AngularJS",
+
+            category: { en: "Web Framework", id: "Framework Web" },
+
+            x: 50,
+
+            y: 660,
+
+            r: 18,
+
+            fontSize: 9,
+
+            delay: 0.65,
+
+            description: {
+                en: "Gained hands-on experience with AngularJS during an intensive training program while interning at SEAL, contributing to frontend features and technical documentation.",
+                id: "Memperoleh pengalaman langsung dengan AngularJS selama program pelatihan intensif saat magang di SEAL, dengan berkontribusi pada fitur frontend dan dokumentasi teknis.",
+            },
+
+            usedIn: [
+                {
+                    en: "Government Tourism Website",
+                    id: "Website Pariwisata Pemerintah",
+                },
+            ],
+
+            related: [
+                "JavaScript",
+                "React",
+                "REST API",
+            ],
+        },
+
+        {
+            id: "figma",
+
+            group: "web",
+
+            label: "Figma",
+
+            title: "Figma",
+
+            category: { en: "UI/UX Design", id: "Desain UI/UX" },
+
+            x: 190,
+
+            y: 660,
+
+            r: 18,
+
+            fontSize: 9,
+
+            delay: 0.7,
+
+            description: {
+                en: "Designing user interfaces, wireframes, and interactive prototypes to support user-centered web and application development.",
+                id: "Merancang antarmuka pengguna, wireframe, dan prototipe interaktif untuk mendukung pengembangan web dan aplikasi yang berpusat pada pengguna.",
+            },
+
+            usedIn: [
+                {
+                    en: "Government Tourism Website",
+                    id: "Website Pariwisata Pemerintah",
+                },
+                {
+                    en: "Portfolio Website",
+                    id: "Website Portofolio",
+                },
+            ],
+
+            related: [
+                "UI/UX Design",
+                "React",
+            ],
+        },
+
         // ================= GAME =================
 
         {
@@ -177,9 +280,9 @@ const skillTreeData = {
 
             label: "Game",
 
-            title: "Game Development",
+            title: { en: "Game Development", id: "Pengembangan Game" },
 
-            category: "Main Branch",
+            category: { en: "Main Branch", id: "Cabang Utama" },
 
             x: 360,
             y: 300,
@@ -190,8 +293,10 @@ const skillTreeData = {
 
             delay: 0.15,
 
-            description:
-                "Designing gameplay systems and developing interactive experiences using modern game engines.",
+            description: {
+                en: "Designing gameplay systems and developing interactive experiences using modern game engines.",
+                id: "Merancang sistem gameplay dan mengembangkan pengalaman interaktif menggunakan game engine modern.",
+            },
 
             usedIn: [
                 "Hanacaraka Quest",
@@ -214,7 +319,7 @@ const skillTreeData = {
 
             title: "Unity",
 
-            category: "Game Engine",
+            category: { en: "Game Engine", id: "Game Engine" },
 
             x: 280,
             y: 500,
@@ -225,8 +330,10 @@ const skillTreeData = {
 
             delay: 0.35,
 
-            description:
-                "Developed gameplay mechanics, interaction systems, and RPG features using Unity.",
+            description: {
+                en: "Developed gameplay mechanics, interaction systems, and RPG features using Unity.",
+                id: "Mengembangkan mekanik gameplay, sistem interaksi, dan fitur RPG menggunakan Unity.",
+            },
 
             usedIn: [
                 "Hanacaraka Quest",
@@ -247,7 +354,7 @@ const skillTreeData = {
 
             title: "Roblox Studio",
 
-            category: "Game Engine",
+            category: { en: "Game Engine", id: "Game Engine" },
 
             x: 360,
             y: 500,
@@ -258,8 +365,10 @@ const skillTreeData = {
 
             delay: 0.4,
 
-            description:
-                "Used Roblox Studio to develop gameplay systems and mechanics for educational simulation games.",
+            description: {
+                en: "Used Roblox Studio to develop gameplay systems and mechanics for educational simulation games.",
+                id: "Menggunakan Roblox Studio untuk mengembangkan sistem dan mekanik gameplay untuk game simulasi edukatif.",
+            },
 
             usedIn: [
                 "The Tani",
@@ -281,7 +390,7 @@ const skillTreeData = {
 
             title: "Blender",
 
-            category: "3D Modeling",
+            category: { en: "3D Modeling", id: "Pemodelan 3D" },
 
             x: 440,
             y: 500,
@@ -292,8 +401,10 @@ const skillTreeData = {
 
             delay: 0.45,
 
-            description:
-                "Creating and editing simple 3D assets used within Unity projects.",
+            description: {
+                en: "Creating and editing simple 3D assets used within Unity projects.",
+                id: "Membuat dan menyunting aset 3D sederhana yang digunakan dalam proyek Unity.",
+            },
 
             usedIn: [
                 "Hanacaraka Quest",
@@ -301,6 +412,42 @@ const skillTreeData = {
 
             related: [
                 "Unity",
+            ],
+        },
+
+        {
+            id: "csharp",
+
+            group: "game",
+
+            label: "C#",
+
+            title: "C#",
+
+            category: { en: "Programming Language", id: "Bahasa Pemrograman" },
+
+            x: 320,
+
+            y: 660,
+
+            r: 18,
+
+            fontSize: 9,
+
+            delay: 0.75,
+
+            description: {
+                en: "Primary language used in Unity to implement gameplay mechanics, interaction systems, and core RPG features for Hanacaraka Quest.",
+                id: "Bahasa utama yang digunakan di Unity untuk mengimplementasikan mekanik gameplay, sistem interaksi, dan fitur RPG inti pada Hanacaraka Quest.",
+            },
+
+            usedIn: [
+                "Hanacaraka Quest",
+            ],
+
+            related: [
+                "Unity",
+                "Gameplay Programming",
             ],
         },
 
@@ -313,9 +460,9 @@ const skillTreeData = {
 
             label: "AI",
 
-            title: "AI & Data",
+            title: { en: "AI & Data", id: "AI & Data" },
 
-            category: "Main Branch",
+            category: { en: "Main Branch", id: "Cabang Utama" },
 
             x: 600,
             y: 300,
@@ -326,8 +473,10 @@ const skillTreeData = {
 
             delay: 0.2,
 
-            description:
-                "Applying artificial intelligence, machine learning, and data analysis techniques to solve practical problems.",
+            description: {
+                en: "Applying artificial intelligence, machine learning, and data analysis techniques to solve practical problems.",
+                id: "Menerapkan teknik kecerdasan buatan, machine learning, dan analisis data untuk menyelesaikan masalah praktis.",
+            },
 
             usedIn: [
                 "SIPETI",
@@ -350,7 +499,7 @@ const skillTreeData = {
 
             title: "Python",
 
-            category: "Programming Language",
+            category: { en: "Programming Language", id: "Bahasa Pemrograman" },
 
             x: 520,
             y: 500,
@@ -361,12 +510,17 @@ const skillTreeData = {
 
             delay: 0.5,
 
-            description:
-                "Used for data processing, statistical analysis, and machine learning experiments.",
+            description: {
+                en: "Used for data processing, statistical analysis, and machine learning experiments.",
+                id: "Digunakan untuk pengolahan data, analisis statistik, dan eksperimen machine learning.",
+            },
 
             usedIn: [
                 "SIPETI",
-                "Research",
+                {
+                    en: "Research",
+                    id: "Riset",
+                },
             ],
 
             related: [
@@ -382,9 +536,9 @@ const skillTreeData = {
 
             label: "ML",
 
-            title: "Machine Learning",
+            title: { en: "Machine Learning", id: "Machine Learning" },
 
-            category: "Artificial Intelligence",
+            category: { en: "Artificial Intelligence", id: "Kecerdasan Buatan" },
 
             x: 600,
             y: 500,
@@ -395,8 +549,10 @@ const skillTreeData = {
 
             delay: 0.55,
 
-            description:
-                "Experience building prediction and clustering models for academic projects.",
+            description: {
+                en: "Experience building prediction and clustering models for academic projects.",
+                id: "Pengalaman membangun model prediksi dan klasterisasi untuk proyek akademik.",
+            },
 
             usedIn: [
                 "SIPETI",
@@ -415,9 +571,9 @@ const skillTreeData = {
 
             label: "Prompt",
 
-            title: "Prompt Engineering",
+            title: { en: "Prompt Engineering", id: "Prompt Engineering" },
 
-            category: "Generative AI",
+            category: { en: "Generative AI", id: "AI Generatif" },
 
             x: 680,
             y: 500,
@@ -428,11 +584,55 @@ const skillTreeData = {
 
             delay: 0.6,
 
-            description:
-                "Using LLMs and AI-assisted workflows to improve productivity during software development.",
+            description: {
+                en: "Using LLMs and AI-assisted workflows to improve productivity during software development.",
+                id: "Memanfaatkan LLM dan alur kerja berbantuan AI untuk meningkatkan produktivitas selama pengembangan perangkat lunak.",
+            },
 
             usedIn: [
-                "Daily Development",
+                {
+                    en: "Daily Development",
+                    id: "Pengembangan Sehari-hari",
+                },
+            ],
+
+            related: [
+                "Python",
+                "Machine Learning",
+            ],
+        },
+
+        {
+            id: "tensorflow",
+
+            group: "ai",
+
+            label: "TF",
+
+            title: { en: "TensorFlow / PyTorch", id: "TensorFlow / PyTorch" },
+
+            category: {
+                en: "Machine Learning Framework",
+                id: "Framework Machine Learning",
+            },
+
+            x: 600,
+
+            y: 660,
+
+            r: 18,
+
+            fontSize: 9,
+
+            delay: 0.8,
+
+            description: {
+                en: "Used machine learning frameworks to build and train prediction models for heart health analysis in the SIPETI project.",
+                id: "Menggunakan framework machine learning untuk membangun dan melatih model prediksi analisis kesehatan jantung pada proyek SIPETI.",
+            },
+
+            usedIn: [
+                "SIPETI",
             ],
 
             related: [
@@ -450,14 +650,18 @@ const skillTreeData = {
         ["web", "react"],
         ["web", "laravel"],
         ["web", "php"],
+        ["web", "angularjs"],
+        ["web", "figma"],
 
         ["game", "unity"],
         ["game", "roblox"],
         ["game", "blender"],
+        ["unity", "csharp"],
 
         ["ai", "python"],
         ["ai", "ml"],
         ["ai", "prompt"],
+        ["ml", "tensorflow"],
     ],
 };
 

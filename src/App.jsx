@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { smoothScrollTo } from './utils/smoothScroll'
+import LanguageProvider from "./i18n/LanguageProvider";
 import TitleScreen from "./components/layout/TitleScreen";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/layout/Hero";
@@ -29,15 +30,17 @@ export default function App() {
   };
 
   return (
-    <div className="bg-bg text-parchment font-body">
-      <Navbar visible={showNavbar} />
-      <TitleScreen onStart={handleStart} />
-      <Hero />
-      <About />
-      <JourneyLog />
-      <Projects />
-      <SkillTree />
-      <Contact />
-    </div>
+    <LanguageProvider>
+      <div className="bg-bg text-parchment font-body">
+        <Navbar visible={showNavbar} />
+        <TitleScreen onStart={handleStart} />
+        <Hero />
+        <About />
+        <JourneyLog />
+        <Projects />
+        <SkillTree />
+        <Contact />
+      </div>
+    </LanguageProvider>
   );
 }

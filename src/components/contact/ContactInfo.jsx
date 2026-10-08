@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function ContactInfo({ info }) {
+  const { t, pick } = useLang();
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -25 }}
@@ -30,22 +34,22 @@ export default function ContactInfo({ info }) {
       <div className="relative">
         {/* Heading */}
         <p className="font-display text-xs uppercase tracking-[4px] text-gold mb-2">
-          Summoning Info
+          {t("contact.summoningInfo")}
         </p>
 
         <h3 className="font-display text-3xl text-goldBright mb-5">
-          Ready for the Next Quest
+          {t("contact.readyNextQuest")}
         </h3>
 
         {/* Intro */}
-        <p className="leading-8 text-parchment/85 mb-10">{info.introduction}</p>
+        <p className="leading-8 text-parchment/85 mb-10">{pick(info.introduction)}</p>
 
         {/* Contact Information */}
         <div className="space-y-7">
           {/* Email */}
           <div className="border-t border-line pt-5">
             <p className="text-[11px] uppercase tracking-[3px] text-gold mb-2">
-              Email
+              {t("contact.email")}
             </p>
 
             <a
@@ -63,7 +67,7 @@ export default function ContactInfo({ info }) {
           {/* Phone */}
           <div className="border-t border-line pt-5">
             <p className="text-[11px] uppercase tracking-[3px] text-gold mb-2">
-              Phone
+              {t("contact.phone")}
             </p>
 
             <a
@@ -81,22 +85,22 @@ export default function ContactInfo({ info }) {
           {/* Location */}
           <div className="border-t border-line pt-5">
             <p className="text-[11px] uppercase tracking-[3px] text-gold mb-2">
-              Location
+              {t("contact.location")}
             </p>
 
-            <p className="text-parchment">{info.location}</p>
+            <p className="text-parchment">{pick(info.location)}</p>
           </div>
 
           {/* Available For */}
           <div className="border-t border-line pt-5">
             <p className="text-[11px] uppercase tracking-[3px] text-gold mb-4">
-              Available For
+              {t("contact.availableFor")}
             </p>
 
             <div className="flex flex-wrap gap-3">
-              {info.availableFor.map((item) => (
+              {pick(info.availableFor).map((item, index) => (
                 <motion.div
-                  key={item}
+                  key={index}
                   whileHover={{
                     y: -3,
                     scale: 1.03,

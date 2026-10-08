@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
 import ContactInfo from "../contact/ContactInfo";
 import ArtifactCard from "../contact/ArtifactCard";
 
 import { contactInfo, artifacts } from "../contact/contactData";
 
 export default function Contact() {
+  const { t } = useLang();
+
   return (
     <>
       <section
@@ -44,11 +47,11 @@ export default function Contact() {
           className="relative mb-14"
         >
           <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-            Final Checkpoint
+            {t("contact.eyebrow")}
           </p>
 
           <h2 className="font-display text-3xl md:text-4xl text-goldBright uppercase tracking-[2px]">
-            Summon
+            {t("contact.title")}
           </h2>
 
           <div className="mt-4 h-px w-20 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
@@ -87,7 +90,7 @@ export default function Contact() {
                 text-gold
               "
             >
-              Artifacts
+              {t("contact.artifacts")}
             </motion.p>
 
             {artifacts.map((artifact) => (
@@ -118,7 +121,7 @@ export default function Contact() {
               mb-3
             "
           >
-            Quest Complete
+            {t("footer.questComplete")}
           </p>
 
           <p
@@ -129,9 +132,7 @@ export default function Contact() {
               mx-auto
             "
           >
-            Thank you for exploring my journey. Every project, challenge, and
-            achievement shared here represents another step toward becoming a
-            better software developer.
+            {t("footer.thanks")}
           </p>
 
           <div

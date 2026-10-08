@@ -17,9 +17,9 @@ const projects = [
 
     name: "Hanacaraka Quest",
 
-    category: "Game Development",
+    category: { en: "Game Development", id: "Pengembangan Game" },
 
-    role: "Gameplay Programmer",
+    role: { en: "Gameplay Programmer", id: "Gameplay Programmer" },
 
     rank: "Ultimate",
 
@@ -35,10 +35,12 @@ const projects = [
 
     images: [hanacarakaQuest1, hanacarakaQuest2],
 
-    tech: ["Unity", "Blender", "Git"],
+    tech: ["Unity", "C#", "Blender", "Git"],
 
-    detail:
-      "A 3D RPG game designed to introduce players to the Javanese script through immersive exploration, action-based combat, and puzzle-solving gameplay. The game features quest progression, inventory management, character progression, and interactive learning mechanics that combine entertainment with cultural education.",
+    detail: {
+      en: "A 3D RPG game designed to introduce players to the Javanese script through immersive exploration, action-based combat, and puzzle-solving gameplay. The game features quest progression, inventory management, character progression, and interactive learning mechanics that combine entertainment with cultural education.",
+      id: "Game RPG 3D yang dirancang untuk memperkenalkan aksara Jawa kepada pemain melalui eksplorasi imersif, pertarungan berbasis aksi, dan gameplay pemecahan teka-teki. Game ini menghadirkan progresi misi, manajemen inventaris, pengembangan karakter, dan mekanik pembelajaran interaktif yang memadukan hiburan dengan edukasi budaya.",
+    },
   },
 
   {
@@ -46,9 +48,12 @@ const projects = [
 
     name: "The Tani",
 
-    category: "Game Development",
+    category: { en: "Game Development", id: "Pengembangan Game" },
 
-    role: "Gameplay Programmer, Game Designer",
+    role: {
+      en: "Gameplay Programmer, Game Designer",
+      id: "Gameplay Programmer, Perancang Game",
+    },
 
     rank: "Ultimate",
 
@@ -64,12 +69,14 @@ const projects = [
 
     images: [theTani1, theTani2],
 
-    tech: ["Roblox Studio"],
+    tech: ["Roblox Studio", "Luau"],
 
     link: "https://www.roblox.com/id/games/110896719203315/The-Tani",
 
-    detail:
-      "A 3D farming simulation RPG that introduces sustainable agriculture through immersive gameplay and strategic farm management. The game features crop cultivation, soil health monitoring, technology progression, dynamic market systems, and ecosystem management to provide an engaging and educational farming experience.",
+    detail: {
+      en: "A 3D farming simulation RPG that introduces sustainable agriculture through immersive gameplay and strategic farm management. The game features crop cultivation, soil health monitoring, technology progression, dynamic market systems, and ecosystem management to provide an engaging and educational farming experience.",
+      id: "Game RPG simulasi pertanian 3D yang memperkenalkan pertanian berkelanjutan melalui gameplay imersif dan manajemen peternakan yang strategis. Game ini menghadirkan budidaya tanaman, pemantauan kesehatan tanah, progresi teknologi, sistem pasar dinamis, dan pengelolaan ekosistem untuk menghadirkan pengalaman bertani yang menarik sekaligus edukatif.",
+    },
   },
 
   {
@@ -77,9 +84,9 @@ const projects = [
 
     name: "SIPETI",
 
-    category: "AI & Web Development",
+    category: { en: "AI & Web Development", id: "AI & Pengembangan Web" },
 
-    role: "Frontend Developer",
+    role: { en: "Frontend Developer", id: "Frontend Developer" },
 
     rank: "Nightmare",
 
@@ -95,10 +102,12 @@ const projects = [
 
     images: [sipeti1, sipeti2],
 
-    tech: ["JavaScript", "HTML", "CSS", "Python"],
+    tech: ["Python", "TensorFlow", "JavaScript", "HTML", "CSS"],
 
-    detail:
-      "A health-focused system powered by machine learning, designed to analyze and predict heart health conditions. It includes health tracking, goal setting, and reporting features, providing users with actionable insights for proactive health management.",
+    detail: {
+      en: "A health-focused system powered by machine learning, designed to analyze and predict heart health conditions. It includes health tracking, goal setting, and reporting features, providing users with actionable insights for proactive health management.",
+      id: "Sistem yang berfokus pada kesehatan dan didukung machine learning, dirancang untuk menganalisis serta memprediksi kondisi kesehatan jantung. Sistem ini mencakup pelacakan kesehatan, penetapan target, dan fitur pelaporan, sehingga pengguna memperoleh wawasan yang dapat ditindaklanjuti untuk pengelolaan kesehatan yang proaktif.",
+    },
   },
 
   {
@@ -106,9 +115,9 @@ const projects = [
 
     name: "PTN-Connect",
 
-    category: "Web Development",
+    category: { en: "Web Development", id: "Pengembangan Web" },
 
-    role: "Frontend Developer",
+    role: { en: "Frontend Developer", id: "Frontend Developer" },
 
     rank: "Hell",
 
@@ -126,8 +135,10 @@ const projects = [
 
     tech: ["Laravel", "MySQL", "JavaScript", "HTML", "CSS"],
 
-    detail:
-      "An interactive application leveraging the K-Means clustering algorithm to assist high school students in selecting suitable majors based on their preferences, academic performance, and aspirations. The application offers personalized recommendations and intuitive visualizations for better decision-making.",
+    detail: {
+      en: "An interactive application leveraging the K-Means clustering algorithm to assist high school students in selecting suitable majors based on their preferences, academic performance, and aspirations. The application offers personalized recommendations and intuitive visualizations for better decision-making.",
+      id: "Aplikasi interaktif yang memanfaatkan algoritma klasterisasi K-Means untuk membantu siswa SMA memilih jurusan yang sesuai berdasarkan minat, prestasi akademik, dan cita-citanya. Aplikasi ini menawarkan rekomendasi yang dipersonalisasi serta visualisasi yang intuitif untuk pengambilan keputusan yang lebih baik.",
+    },
   },
 
   {
@@ -135,9 +146,9 @@ const projects = [
 
     name: "BisnisKu",
 
-    category: "Web Development",
+    category: { en: "Web Development", id: "Pengembangan Web" },
 
-    role: "Frontend Developer",
+    role: { en: "Frontend Developer", id: "Frontend Developer" },
 
     rank: "Normal",
 
@@ -155,8 +166,10 @@ const projects = [
 
     tech: ["Laravel", "Shopify", "JavaScript", "HTML", "CSS"],
 
-    detail:
-      "A Shopify-based system that simplifies website creation for small businesses and entrepreneurs. It offers customizable templates, integrated payment options, analytics tracking, and user support, enabling businesses to establish a strong online presence efficiently.",
+    detail: {
+      en: "A Shopify-based system that simplifies website creation for small businesses and entrepreneurs. It offers customizable templates, integrated payment options, analytics tracking, and user support, enabling businesses to establish a strong online presence efficiently.",
+      id: "Sistem berbasis Shopify yang menyederhanakan pembuatan website untuk usaha kecil dan wirausaha. Sistem ini menyediakan template yang dapat disesuaikan, opsi pembayaran terintegrasi, pelacakan analitik, dan dukungan pengguna, sehingga pelaku usaha dapat membangun kehadiran online yang kuat secara efisien.",
+    },
   },
 
   {
@@ -164,9 +177,9 @@ const projects = [
 
     name: "Isna Collection",
 
-    category: "Web Development",
+    category: { en: "Web Development", id: "Pengembangan Web" },
 
-    role: "Full Stack Developer",
+    role: { en: "Full Stack Developer", id: "Full Stack Developer" },
 
     rank: "Nightmare",
 
@@ -184,8 +197,10 @@ const projects = [
 
     tech: ["Laravel", "MySQL", "HTML", "CSS", "JavaScript"],
 
-    detail:
-      "A user-friendly website designed to promote and showcase clothing tailoring services. The platform features a responsive design, appointment booking, portfolio display, and customer review functionality to enhance user engagement and business visibility.",
+    detail: {
+      en: "A user-friendly website designed to promote and showcase clothing tailoring services. The platform features a responsive design, appointment booking, portfolio display, and customer review functionality to enhance user engagement and business visibility.",
+      id: "Website ramah pengguna yang dirancang untuk mempromosikan dan menampilkan jasa penjahitan pakaian. Platform ini menghadirkan desain responsif, pemesanan janji temu, galeri portofolio, dan fitur ulasan pelanggan untuk meningkatkan keterlibatan pengguna serta visibilitas usaha.",
+    },
   },
 ];
 

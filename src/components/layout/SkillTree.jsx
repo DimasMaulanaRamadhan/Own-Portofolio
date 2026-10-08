@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
 import skillTreeData from "../skilltree/skillTreeData";
 import MobileSkillTree from "../skilltree/MobileSkillTree";
 import TreeNode from "../skilltree/TreeNode";
@@ -8,6 +9,7 @@ import TreeEdge from "../skilltree/TreeEdge";
 import SkillDetail from "../skilltree/SkillDetail";
 
 export default function SkillTree() {
+  const { t } = useLang();
   const { nodes, edges } = skillTreeData;
 
   const [selected, setSelected] = useState(null);
@@ -66,7 +68,7 @@ export default function SkillTree() {
             mb-2
           "
         >
-          Skill Tree
+          {t("skilltree.eyebrow")}
         </p>
 
         <h2
@@ -79,7 +81,7 @@ export default function SkillTree() {
             text-goldBright
           "
         >
-          Path of Mastery
+          {t("skilltree.pathOfMastery")}
         </h2>
 
         <div
@@ -129,7 +131,7 @@ export default function SkillTree() {
           "
         >
           <svg
-            viewBox="0 0 720 620"
+            viewBox="0 0 720 700"
             className="min-w-[720px] w-full h-full"
           >
             {/* EDGES */}
@@ -211,10 +213,10 @@ export default function SkillTree() {
           pt-8
         "
       >
-        <Legend color="#E0916B" label="Web Development" />
-        <Legend color="#6BC4A4" label="Game Development" />
-        <Legend color="#7BB0D6" label="Artificial Intelligence" />
-        <Legend color="#C99A52" label="Core Skill" />
+        <Legend color="#E0916B" label={t("skilltree.webDev")} />
+        <Legend color="#6BC4A4" label={t("skilltree.gameDev")} />
+        <Legend color="#7BB0D6" label={t("skilltree.ai")} />
+        <Legend color="#C99A52" label={t("skilltree.coreSkill")} />
       </motion.div>
     </section>
   );

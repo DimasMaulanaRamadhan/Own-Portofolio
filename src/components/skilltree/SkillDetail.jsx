@@ -1,6 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function SkillDetail({ skill }) {
+  const { t, pick } = useLang();
+
   return (
     <motion.aside
       layout
@@ -61,16 +65,15 @@ export default function SkillDetail({ skill }) {
                 tracking-[3px]
               "
             >
-              Skill Codex
+              {t("skilltree.codex")}
             </h3>
 
             <p className="mt-4 max-w-xs leading-7 text-parchment/70">
-              No skill selected.
+              {t("skilltree.noneSelected")}
             </p>
 
             <p className="mt-4 max-w-xs leading-7 text-parchment/70">
-              Select any node from the Skill Tree to inspect its description,
-              projects, and related technologies.
+              {t("skilltree.selectNode")}
             </p>
           </motion.div>
         ) : (
@@ -91,7 +94,7 @@ export default function SkillDetail({ skill }) {
                 text-gold
               "
             >
-              {skill.category}
+              {pick(skill.category)}
             </p>
 
             {/* Title */}
@@ -104,7 +107,7 @@ export default function SkillDetail({ skill }) {
                 text-goldBright
               "
             >
-              {skill.title}
+              {pick(skill.title)}
             </h3>
 
             {/* Status */}
@@ -124,7 +127,7 @@ export default function SkillDetail({ skill }) {
                   text-green-400
                 "
               >
-                Unlocked
+                {t("skilltree.unlocked")}
               </span>
             </div>
 
@@ -144,7 +147,7 @@ export default function SkillDetail({ skill }) {
                   text-gold
                 "
               >
-                Description
+                {t("skilltree.description")}
               </p>
 
               <p
@@ -153,7 +156,7 @@ export default function SkillDetail({ skill }) {
                   text-parchment
                 "
               >
-                {skill.description}
+                {pick(skill.description)}
               </p>
             </section>
 
@@ -169,13 +172,13 @@ export default function SkillDetail({ skill }) {
                   text-gold
                 "
               >
-                Used In
+                {t("skilltree.usedIn")}
               </p>
 
               <div className="space-y-3">
-                {skill.usedIn.map((item) => (
+                {pick(skill.usedIn).map((item, index) => (
                   <div
-                    key={item}
+                    key={index}
                     className="
                       flex
                       items-center
@@ -208,13 +211,13 @@ export default function SkillDetail({ skill }) {
                   text-gold
                 "
               >
-                Related Skills
+                {t("skilltree.related")}
               </p>
 
               <div className="flex flex-wrap gap-3">
-                {skill.related.map((item) => (
+                {pick(skill.related).map((item, index) => (
                   <span
-                    key={item}
+                    key={index}
                     className="
                       rounded-lg
                       border

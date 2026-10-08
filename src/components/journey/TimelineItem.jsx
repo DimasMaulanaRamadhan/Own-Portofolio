@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
 import PreviewThumbnail from "./PreviewThumbnail";
 import TimelineStatusBadge from "./TimelineStatusBadge";
 import TechBadge from "../projects/TechBadge";
 
 export default function TimelineItem({ item, onPreview }) {
+  const { t, pick } = useLang();
+
   return (
     <motion.div
       layout
@@ -59,7 +62,7 @@ export default function TimelineItem({ item, onPreview }) {
           mb-1
         "
       >
-        {item.title}
+        {pick(item.title)}
       </h3>
 
       {/* Role */}
@@ -73,7 +76,7 @@ export default function TimelineItem({ item, onPreview }) {
             mb-5
           "
         >
-          {item.role}
+          {pick(item.role)}
         </p>
       )}
 
@@ -88,11 +91,11 @@ export default function TimelineItem({ item, onPreview }) {
       {item.gpa && (
         <div className="mt-6">
           <p className="text-xs uppercase tracking-[3px] text-gold mb-2">
-            Academic Record
+            {t("journey.academicRecord")}
           </p>
 
           <div className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
-            GPA {item.gpa}
+            {t("journey.gpa")} {item.gpa}
           </div>
         </div>
       )}
@@ -106,7 +109,7 @@ export default function TimelineItem({ item, onPreview }) {
             mb-6
           "
         >
-          {item.description}
+          {pick(item.description)}
         </p>
       )}
 
@@ -114,23 +117,25 @@ export default function TimelineItem({ item, onPreview }) {
       {item.activities?.length > 0 && (
         <div className="mt-8">
           <p className="text-xs uppercase tracking-[3px] text-gold mb-4">
-            Organization Activities
+            {t("journey.orgActivities")}
           </p>
 
-          {item.activities.map((activity) => (
+          {item.activities.map((activity, activityIndex) => (
             <div
-              key={activity.title}
+              key={activityIndex}
               className="rounded-xl border border-line bg-panel p-5 mb-4"
             >
-              <h4 className="font-display text-goldBright">{activity.title}</h4>
+              <h4 className="font-display text-goldBright">
+                {pick(activity.title)}
+              </h4>
 
               <p className="text-sm text-muted mt-1 whitespace-pre-line">
-                {activity.organization}
+                {pick(activity.organization)}
               </p>
 
               <ul className="mt-4 space-y-2 list-disc pl-5 text-parchment/80">
-                {activity.points.map((point) => (
-                  <li key={point}>{point}</li>
+                {pick(activity.points).map((point, pointIndex) => (
+                  <li key={pointIndex}>{point}</li>
                 ))}
               </ul>
             </div>
@@ -142,10 +147,10 @@ export default function TimelineItem({ item, onPreview }) {
       {item.mission && (
         <div className="mb-6">
           <p className="font-display text-xs uppercase tracking-[3px] text-gold mb-2">
-            Mission
+            {t("journey.mission")}
           </p>
 
-          <p className="text-parchment/90 leading-8">{item.mission}</p>
+          <p className="text-parchment/90 leading-8">{pick(item.mission)}</p>
         </div>
       )}
 
@@ -153,13 +158,13 @@ export default function TimelineItem({ item, onPreview }) {
       {item.objectives?.length > 0 && (
         <div className="mb-6">
           <p className="font-display text-xs uppercase tracking-[3px] text-gold mb-3">
-            Completed Objectives
+            {t("journey.objectives")}
           </p>
 
           <ul className="space-y-2">
-            {item.objectives.map((obj) => (
+            {pick(item.objectives).map((obj, index) => (
               <li
-                key={obj}
+                key={index}
                 className="
                   flex
                   gap-3
@@ -180,7 +185,7 @@ export default function TimelineItem({ item, onPreview }) {
       {item.tech?.length > 0 && (
         <div className="mb-7">
           <p className="font-display text-xs uppercase tracking-[3px] text-gold mb-3">
-            Technology Used
+            {t("journey.technology")}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -198,8 +203,8 @@ export default function TimelineItem({ item, onPreview }) {
             <PreviewThumbnail
               key={index}
               image={image}
-              title={`Mission Evidence`}
-              subtitle="Click to inspect"
+              title={t("journey.missionEvidence")}
+              subtitle={t("journey.clickToInspect")}
               onPreview={onPreview}
             />
           ))}

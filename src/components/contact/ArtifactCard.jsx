@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function ArtifactCard({ artifact }) {
+  const { pick } = useLang();
+
   const handleClick = () => {
     if (artifact.external) {
       window.open(artifact.url, "_blank", "noopener,noreferrer");
@@ -83,7 +87,7 @@ export default function ArtifactCard({ artifact }) {
             mb-2
           "
         >
-          {artifact.subtitle}
+          {pick(artifact.subtitle)}
         </p>
 
         {/* Title */}
@@ -95,7 +99,7 @@ export default function ArtifactCard({ artifact }) {
             mb-4
           "
         >
-          {artifact.title}
+          {pick(artifact.title)}
         </h3>
 
         {/* Description */}
@@ -107,7 +111,7 @@ export default function ArtifactCard({ artifact }) {
             text-parchment/80
           "
         >
-          {artifact.description}
+          {pick(artifact.description)}
         </p>
 
         {/* Bottom */}
@@ -130,7 +134,7 @@ export default function ArtifactCard({ artifact }) {
               group-hover:tracking-[3px]
             "
           >
-            {artifact.button}
+            {pick(artifact.button)}
           </span>
 
           <motion.span

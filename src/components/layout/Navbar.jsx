@@ -2,17 +2,56 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RxHamburgerMenu, RxCross2 } from "react-icons/rx";
 
+import useLang from "../../i18n/useLang";
+
 const links = [
-  { href: "#hero", label: "Home" },
-  { href: "#about", label: "Lore" },
-  { href: "#trials", label: "Trials" },
-  { href: "#projects", label: "Bosses" },
-  { href: "#skilltree", label: "Skill Tree" },
-  { href: "#contact", label: "Summon" },
+  { href: "#hero", key: "nav.home" },
+  { href: "#about", key: "nav.lore" },
+  { href: "#journey", key: "nav.journey" },
+  { href: "#projects", key: "nav.bosses" },
+  { href: "#skilltree", key: "nav.skilltree" },
+  { href: "#contact", key: "nav.summon" },
 ];
+
+function LanguageToggle({ className = "" }) {
+  const { lang, setLang, t } = useLang();
+
+  const base =
+    "font-display text-[11px] tracking-[2px] uppercase transition-colors px-3 py-1 cursor-pointer select-none";
+  const active = "bg-gold text-bg";
+  const inactive = "text-parchment/60 hover:text-parchment";
+
+  return (
+    <div
+      role="group"
+      aria-label={t("nav.toggleAria")}
+      title={t("nav.toggleAria")}
+      className={`flex items-center rounded-full border border-line/60 overflow-hidden ${className}`}
+    >
+      <button
+        type="button"
+        onClick={() => setLang("en")}
+        aria-pressed={lang === "en"}
+        className={`${base} ${lang === "en" ? active : inactive}`}
+      >
+        EN
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setLang("id")}
+        aria-pressed={lang === "id"}
+        className={`${base} ${lang === "id" ? active : inactive}`}
+      >
+        ID
+      </button>
+    </div>
+  );
+}
 
 export default function Navbar({ visible }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLang();
 
   function handleClick() {
     setMenuOpen(false);
@@ -26,7 +65,7 @@ export default function Navbar({ visible }) {
           : "opacity-0 invisible pointer-events-none"
       }`}
     >
-      <div className="max-w-[1250px] mx-auto px-6 py-4">
+      <div className="max-w-[1425px] mx-auto px-2 mr-5 py-4">
 
         {/* ================= TOP BAR ================= */}
 
@@ -39,29 +78,41 @@ export default function Navbar({ visible }) {
             Dimas M. Ramadhan
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation + Language Toggle */}
 
-          <div className="hidden md:flex gap-8">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="font-display text-xs tracking-[2px] uppercase text-parchment/80 hover:text-goldBright transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center gap-8">
+            <div className="flex gap-8">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="font-display text-xs tracking-[2px] uppercase text-parchment/80 hover:text-goldBright transition-colors"
+                >
+                  {t(link.key)}
+                </a>
+              ))}
+            </div>
+
+            {/* Divider */}
+
+            <span className="h-5 w-px bg-goldBright/70" />
+
+            <LanguageToggle />
           </div>
 
-          {/* Mobile Button */}
+          {/* Mobile: Language Toggle + Menu Button */}
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-gold text-2xl hover:text-goldBright transition"
-            aria-label="Toggle navigation"
-          >
-            {menuOpen ? <RxCross2 /> : <RxHamburgerMenu />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageToggle />
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-gold text-2xl hover:text-goldBright transition"
+              aria-label="Toggle navigation"
+            >
+              {menuOpen ? <RxCross2 /> : <RxHamburgerMenu />}
+            </button>
+          </div>
         </div>
 
         {/* ================= MOBILE MENU ================= */}
@@ -105,7 +156,7 @@ export default function Navbar({ visible }) {
                       transition-colors
                     "
                   >
-                    {link.label}
+                    {t(link.key)}
                   </a>
 
                 ))}

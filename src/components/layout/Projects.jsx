@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 
+import useLang from "../../i18n/useLang";
 import projects from "../projects/data";
 import ProjectCard from "../projects/ProjectCard";
 
 export default function Projects() {
+  const { t } = useLang();
   const [openedProject, setOpenedProject] = useState(null);
 
   const [previewImage, setPreviewImage] = useState(null);
+
+  useEffect(() => {
+    if (!previewImage) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setPreviewImage(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [previewImage]);
 
   function handleToggle(id) {
     setOpenedProject((currentId) => (currentId === id ? null : id));
@@ -36,11 +49,11 @@ export default function Projects() {
           className="relative mb-16"
         >
           <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-            Bosses Defeated
+            {t("projects.eyebrow")}
           </p>
 
           <h2 className="font-display text-3xl md:text-4xl text-goldBright font-bold uppercase tracking-[2px]">
-            Chronicles of Conquest
+            {t("projects.title")}
           </h2>
 
           <div className="mt-4 h-px w-20 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
@@ -103,9 +116,12 @@ export default function Projects() {
                 hover:border-gold
                 hover:rotate-90
                 cursor-pointer
+                flex
+                items-center
+                justify-center
               "
             >
-              ✕
+              <FaTimes />
             </button>
 
             {/* Image */}
@@ -156,7 +172,7 @@ export default function Projects() {
                 pointer-events-none
               "
             >
-              Press ESC or click outside to close
+              {t("modal.closeHint")}
             </motion.p>
           </motion.div>
         )}

@@ -1,6 +1,10 @@
 import dimas2 from "../../assets/images/dimas2.png";
 
+import useLang from "../../i18n/useLang";
+
 export default function About() {
+  const { t } = useLang();
+
   return (
     <section
       id="about"
@@ -9,11 +13,11 @@ export default function About() {
       {/* Heading */}
       <div className="mb-16">
         <p className="font-display text-xs tracking-[4px] text-gold uppercase mb-2">
-          Character Lore
+          {t("about.eyebrow")}
         </p>
 
         <h2 className="font-display text-2xl md:text-3xl text-goldBright font-bold uppercase tracking-[2px]">
-          Origin Story
+          {t("about.title")}
         </h2>
 
         <div className="mt-4 h-px w-20 bg-gradient-to-r from-gold via-gold/50 to-transparent" />
@@ -42,25 +46,11 @@ export default function About() {
         {/* Lore */}
         <div className="max-w-3xl">
           <div className="border-l-2 border-ember pl-6 space-y-6 italic text-parchment/90 text-sm md:text-base leading-8">
-            <p>
-              I am an Informatics Engineering fresh graduate from Universitas
-              Negeri Malang with a strong interest in web development, game development, UI/UX
-              design, and AI-powered applications.
-            </p>
+            <p>{t("about.p1")}</p>
 
-            <p>
-              Proficient in Python, JavaScript, and modern front-end
-              technologies, I develop user-centered applications that combine
-              functionality, usability, and clean design. I also leverage AI
-              prompt engineering and generative AI tools to enhance development
-              workflows and create innovative digital solutions.
-            </p>
+            <p>{t("about.p2")}</p>
 
-            <p>
-              With strong problem-solving, communication, and teamwork skills, I
-              am committed to continuous learning and eager to contribute to
-              impactful projects that address real-world challenges.
-            </p>
+            <p>{t("about.p3")}</p>
           </div>
         </div>
       </div>

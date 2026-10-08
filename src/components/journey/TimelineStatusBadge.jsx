@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 const statusMap = {
   Completed: {
-    label: "Completed",
+    key: "status.completed",
     border: "border-emerald-500/30",
     bg: "bg-emerald-500/10",
     text: "text-emerald-300",
@@ -10,7 +12,7 @@ const statusMap = {
   },
 
   Ongoing: {
-    label: "Ongoing",
+    key: "status.ongoing",
     border: "border-amber-500/30",
     bg: "bg-amber-500/10",
     text: "text-amber-300",
@@ -18,7 +20,7 @@ const statusMap = {
   },
 
   Internship: {
-    label: "Internship",
+    key: "status.internship",
     border: "border-sky-500/30",
     bg: "bg-sky-500/10",
     text: "text-sky-300",
@@ -26,7 +28,7 @@ const statusMap = {
   },
 
   Organization: {
-    label: "Organization",
+    key: "status.organization",
     border: "border-violet-500/30",
     bg: "bg-violet-500/10",
     text: "text-violet-300",
@@ -34,7 +36,7 @@ const statusMap = {
   },
 
   Certificate: {
-    label: "Certificate",
+    key: "status.certificate",
     border: "border-cyan-500/30",
     bg: "bg-cyan-500/10",
     text: "text-cyan-300",
@@ -42,7 +44,7 @@ const statusMap = {
   },
 
   Award: {
-    label: "Award",
+    key: "status.award",
     border: "border-yellow-500/30",
     bg: "bg-yellow-500/10",
     text: "text-yellow-300",
@@ -51,6 +53,7 @@ const statusMap = {
 };
 
 export default function TimelineStatusBadge({ status }) {
+  const { t } = useLang();
   const style = statusMap[status] ?? {
     label: status,
     border: "border-line",
@@ -58,6 +61,8 @@ export default function TimelineStatusBadge({ status }) {
     text: "text-parchment",
     dot: "bg-parchment",
   };
+
+  const label = style.key ? t(style.key) : style.label;
 
   return (
     <motion.div
@@ -93,7 +98,7 @@ export default function TimelineStatusBadge({ status }) {
         `}
       />
 
-      {style.label}
+      {label}
     </motion.div>
   );
 }

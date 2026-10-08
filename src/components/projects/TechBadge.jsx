@@ -17,6 +17,11 @@ import {
   SiBlender,
   SiShopify,
   SiVite,
+  SiSharp,
+  SiRobloxstudio,
+  SiTensorflow,
+  SiFigma,
+  SiAngular,
 } from "react-icons/si";
 
 const techMap = {
@@ -83,6 +88,31 @@ const techMap = {
   Vite: {
     icon: SiVite,
     color: "text-violet-400",
+  },
+
+  "C#": {
+    icon: SiSharp,
+    color: "text-violet-400",
+  },
+
+  Luau: {
+    icon: SiRobloxstudio,
+    color: "text-red-400",
+  },
+
+  TensorFlow: {
+    icon: SiTensorflow,
+    color: "text-orange-400",
+  },
+
+  Figma: {
+    icon: SiFigma,
+    color: "text-pink-400",
+  },
+
+  AngularJS: {
+    icon: SiAngular,
+    color: "text-red-500",
   },
 };
 

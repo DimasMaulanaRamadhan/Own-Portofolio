@@ -1,4 +1,8 @@
+import useLang from "../../i18n/useLang";
+
 export default function TitleScreen({ onStart }) {
+  const { t } = useLang();
+
   return (
     <div
       id="title"
@@ -11,7 +15,7 @@ export default function TitleScreen({ onStart }) {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(138,52,22,0.14),transparent_65%)] pointer-events-none" />
 
       <p className="font-display text-xs md:text-sm tracking-[3px] md:tracking-[3px] text-muted uppercase mb-6 relative">
-        A portfolio
+        {t("title.tagline")}
       </p>
       <h1 className="font-display text-3xl md:text-6xl text-goldBright tracking-[4px] md:tracking-[6px] uppercase relative leading-snug">
         Dimas Maulana
@@ -20,7 +24,7 @@ export default function TitleScreen({ onStart }) {
       </h1>
 
       <p className="mt-12 text-muted text-sm md:text-base tracking-[2px] md:tracking-[3px] uppercase animate-fade-blink relative">
-        Click anywhere to start
+        {t("title.start")}
       </p>
     </div>
   );

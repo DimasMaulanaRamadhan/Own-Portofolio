@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
 import PreviewThumbnail from "./PreviewThumbnail";
 
 export default function AchievementCard({ achievement, onPreview }) {
+  const { t, pick } = useLang();
+
   return (
     <motion.article
       layout
@@ -36,7 +39,7 @@ export default function AchievementCard({ achievement, onPreview }) {
                 font-display
               "
             >
-              {achievement.type}
+              {achievement.type && t(`achievement.${achievement.type.toLowerCase()}`)}
             </p>
 
             <h3
@@ -47,13 +50,13 @@ export default function AchievementCard({ achievement, onPreview }) {
                 leading-snug
               "
             >
-              {achievement.title}
+              {pick(achievement.title)}
             </h3>
 
             {achievement.issuer && (
               <p className="mt-2 text-sm text-parchment/70">
-                Issued by{" "}
-                <span className="text-parchment">{achievement.issuer}</span>
+                {t("journey.issuedBy")}{" "}
+                <span className="text-parchment">{pick(achievement.issuer)}</span>
               </p>
             )}
           </div>
@@ -72,7 +75,7 @@ export default function AchievementCard({ achievement, onPreview }) {
               "
             >
               <p className="font-display text-xs tracking-[2px] text-gold uppercase">
-                Year
+                {t("journey.year")}
               </p>
 
               <p className="mt-1 text-parchment font-semibold">
@@ -89,11 +92,11 @@ export default function AchievementCard({ achievement, onPreview }) {
           {achievement.description && (
             <>
               <p className="font-display text-xs tracking-[3px] uppercase text-gold mb-3">
-                Description
+                {t("journey.description")}
               </p>
 
               <p className="leading-8 text-parchment/90">
-                {achievement.description}
+                {pick(achievement.description)}
               </p>
             </>
           )}
@@ -102,8 +105,8 @@ export default function AchievementCard({ achievement, onPreview }) {
         {achievement.image && (
           <PreviewThumbnail
             image={achievement.image}
-            title={achievement.type}
-            subtitle="Click to inspect"
+            title={achievement.type && t(`achievement.${achievement.type.toLowerCase()}`)}
+            subtitle={t("journey.clickToInspect")}
             onPreview={onPreview}
           />
         )}

@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 const statusConfig = {
   Completed: {
     color: "text-emerald-300",
     border: "border-emerald-700/40",
     bg: "bg-emerald-900/20",
     glow: "shadow-[0_0_15px_rgba(16,185,129,0.15)]",
-    label: "Quest Completed",
+    key: "status.questCompleted",
   },
 
   "In Progress": {
@@ -14,7 +16,7 @@ const statusConfig = {
     border: "border-amber-700/40",
     bg: "bg-amber-900/20",
     glow: "shadow-[0_0_15px_rgba(245,158,11,0.15)]",
-    label: "Quest Active",
+    key: "status.questActive",
   },
 
   Archived: {
@@ -22,7 +24,7 @@ const statusConfig = {
     border: "border-slate-700/40",
     bg: "bg-slate-900/20",
     glow: "shadow-[0_0_15px_rgba(148,163,184,0.10)]",
-    label: "Ancient Record",
+    key: "status.ancientRecord",
   },
 
   Cancelled: {
@@ -30,11 +32,12 @@ const statusConfig = {
     border: "border-red-700/40",
     bg: "bg-red-900/20",
     glow: "shadow-[0_0_15px_rgba(239,68,68,0.15)]",
-    label: "Quest Failed",
+    key: "status.questFailed",
   },
 };
 
 export default function StatusBadge({ status }) {
+  const { t } = useLang();
   const config = statusConfig[status] || statusConfig["Archived"];
 
   return (
@@ -79,7 +82,7 @@ export default function StatusBadge({ status }) {
           font-medium
         "
       >
-        {config.label}
+        {t(config.key)}
       </span>
     </motion.div>
   );

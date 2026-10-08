@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function PreviewThumbnail({
   image,
   title = "Preview",
   subtitle = "Click to inspect",
   onPreview,
 }) {
+  const { t } = useLang();
+
   if (!image) return null;
 
   return (
@@ -68,7 +72,7 @@ export default function PreviewThumbnail({
               text-goldBright
             "
           >
-            Inspect
+            {t("modal.inspect")}
           </span>
         </div>
       </div>

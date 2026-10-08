@@ -1,3 +1,5 @@
+const DEFAULT_DURATION = 800
+
 export function smoothScrollTo(targetId, duration = DEFAULT_DURATION) {
   const target = document.getElementById(targetId)
   if (!target) return

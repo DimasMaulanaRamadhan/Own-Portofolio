@@ -1,6 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function MobileSkillTree({ nodes = [], selected, setSelected, SkillDetail }) {
+  const { t } = useLang();
   const root = nodes.find((n) => n.id === "you");
   const webMain = nodes.find((n) => n.id === "web");
   const gameMain = nodes.find((n) => n.id === "game");
@@ -42,7 +45,7 @@ export default function MobileSkillTree({ nodes = [], selected, setSelected, Ski
 
       {/* ================= WEB ================= */}
       {webMain && (
-        <Section title="Web Development">
+        <Section title={t("skilltree.webDev")}>
           <div className="flex justify-center">
             <Node
               node={webMain}
@@ -88,7 +91,7 @@ export default function MobileSkillTree({ nodes = [], selected, setSelected, Ski
 
       {/* ================= GAME ================= */}
       {gameMain && (
-        <Section title="Game Development">
+        <Section title={t("skilltree.gameDev")}>
           <div className="flex justify-center">
             <Node
               node={gameMain}
@@ -134,7 +137,7 @@ export default function MobileSkillTree({ nodes = [], selected, setSelected, Ski
 
       {/* ================= AI ================= */}
       {aiMain && (
-        <Section title="Artificial Intelligence">
+        <Section title={t("skilltree.ai")}>
           <div className="flex justify-center">
             <Node
               node={aiMain}
@@ -209,6 +212,8 @@ function Section({ title, children }) {
 }
 
 function Node({ node, selected, onClick, large = false }) {
+  const { pick } = useLang();
+
   if (!node) return null;
 
   return (
@@ -268,7 +273,7 @@ function Node({ node, selected, onClick, large = false }) {
           max-w-[80px]
         "
       >
-        {node.title || ""}
+        {node.title ? pick(node.title) : ""}
       </span>
     </motion.button>
   );

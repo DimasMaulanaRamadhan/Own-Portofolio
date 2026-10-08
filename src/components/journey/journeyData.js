@@ -23,14 +23,19 @@ export const academicJourney = [
 
         years: "2019 – 2022",
 
-        title: "State Senior High School 1 Sidayu",
+        title: {
+            en: "State Senior High School 1 Sidayu",
+            id: "SMA Negeri 1 Sidayu",
+        },
 
-        role: "Initial Education",
+        role: { en: "Initial Education", id: "Pendidikan Awal" },
 
         status: "Completed",
 
-        description:
-            "Completed secondary education with a strong foundation in mathematics, science, and analytical thinking while actively participating in academic and extracurricular activities.",
+        description: {
+            en: "Completed secondary education with a strong foundation in mathematics, science, and analytical thinking while actively participating in academic and extracurricular activities.",
+            id: "Menyelesaikan pendidikan menengah dengan dasar yang kuat dalam matematika, sains, dan berpikir analitis, sekaligus aktif mengikuti kegiatan akademik maupun ekstrakurikuler.",
+        },
 
         activities: [],
     },
@@ -40,26 +45,46 @@ export const academicJourney = [
 
         years: "2022 - 2026",
 
-        title: "State University of Malang",
+        title: {
+            en: "State University of Malang",
+            id: "Universitas Negeri Malang",
+        },
 
-        role: "Bachelor of Informatics Engineering",
+        role: {
+            en: "Bachelor of Informatics Engineering",
+            id: "Sarjana Teknik Informatika",
+        },
 
         status: "Completed",
 
         gpa: "3.82 / 4.00",
 
-        description:
-            "Studied software engineering, artificial intelligence, web development, game development, human-computer interaction, and software engineering practices.",
+        description: {
+            en: "Studied software engineering, artificial intelligence, web development, game development, human-computer interaction, and software engineering practices.",
+            id: "Mempelajari rekayasa perangkat lunak, kecerdasan buatan, pengembangan web, pengembangan game, interaksi manusia-komputer, serta praktik rekayasa perangkat lunak.",
+        },
 
         activities: [
             {
-                title: "Committee Member (Event Division)",
+                title: {
+                    en: "Committee Member (Event Division)",
+                    id: "Anggota Kepanitiaan (Divisi Acara)",
+                },
 
-                organization: "CAPSTONE EXPO\nFaculty of Engineering",
+                organization: {
+                    en: "CAPSTONE EXPO\nFaculty of Engineering",
+                    id: "CAPSTONE EXPO\nFakultas Teknik",
+                },
 
                 points: [
-                    "Managed event planning and execution for the campus expo.",
-                    "Coordinated with various stakeholders to ensure the event’s success."
+                    {
+                        en: "Managed event planning and execution for the campus expo.",
+                        id: "Mengelola perencanaan dan pelaksanaan acara untuk expo kampus.",
+                    },
+                    {
+                        en: "Coordinated with various stakeholders to ensure the event’s success.",
+                        id: "Berkoordinasi dengan berbagai pihak terkait untuk memastikan kesuksesan acara.",
+                    },
                 ]
             }
         ]
@@ -79,32 +104,58 @@ export const professionalJourney = [
 
         title: "Social Economic Accelerator Lab (SEAL)",
 
-        role: "Intern Frontend Web Developer",
+        role: {
+            en: "Intern Frontend Web Developer",
+            id: "Magang Frontend Web Developer",
+        },
 
         status: "Completed",
 
-        mission:
-            "Contributed to the development of a government web application for the Southeast Sulawesi Tourism and Creative Economy Office by building responsive user interfaces and integrating frontend functionality with backend services.",
+        mission: {
+            en: "Contributed to the development of a government web application for the Southeast Sulawesi Tourism and Creative Economy Office by building responsive user interfaces and integrating frontend functionality with backend services.",
+            id: "Berkontribusi dalam pengembangan aplikasi web pemerintah untuk Dinas Pariwisata dan Ekonomi Kreatif Sulawesi Tenggara dengan membangun antarmuka pengguna yang responsif serta mengintegrasikan fungsionalitas frontend dengan layanan backend.",
+        },
 
         objectives: [
-            "Developed reusable React.js UI components for a government web application.",
+            {
+                en: "Developed reusable React.js UI components for a government web application.",
+                id: "Mengembangkan komponen antarmuka React.js yang dapat digunakan ulang untuk aplikasi web pemerintah.",
+            },
 
-            "Integrated frontend modules with RESTful APIs and backend services.",
+            {
+                en: "Integrated frontend modules with RESTful APIs and backend services.",
+                id: "Mengintegrasikan modul frontend dengan RESTful API dan layanan backend.",
+            },
 
-            "Implemented authentication, landing pages, user profiles, and dynamic forms.",
+            {
+                en: "Implemented authentication, landing pages, user profiles, and dynamic forms.",
+                id: "Menerapkan autentikasi, halaman landing, profil pengguna, dan formulir dinamis.",
+            },
 
-            "Resolved frontend issues related to state synchronization, validation, and responsive layouts.",
+            {
+                en: "Resolved frontend issues related to state synchronization, validation, and responsive layouts.",
+                id: "Menyelesaikan masalah frontend terkait sinkronisasi state, validasi, dan tata letak responsif.",
+            },
 
-            "Collaborated within an Agile development team alongside UI/UX designers and backend developers.",
+            {
+                en: "Collaborated within an Agile development team alongside UI/UX designers and backend developers.",
+                id: "Berkolaborasi dalam tim pengembangan Agile bersama desainer UI/UX dan pengembang backend.",
+            },
 
-            "Completed intensive AngularJS training while contributing to technical documentation.",
+            {
+                en: "Completed intensive AngularJS training while contributing to technical documentation.",
+                id: "Menyelesaikan pelatihan intensif AngularJS sekaligus berkontribusi pada dokumentasi teknis.",
+            },
         ],
 
         tech: [
             "React",
+            "AngularJS",
             "JavaScript",
+            "Tailwind",
             "REST API",
             "Git",
+            "Figma",
         ],
 
         images: [
@@ -131,8 +182,10 @@ export const honorsAchievements = [
 
         year: "2024",
 
-        description:
-            "Successfully completed the 'English for IT Professionals' course, focusing on English communication skills for software development, information technology, and professional workplace environments.",
+        description: {
+            en: "Successfully completed the 'English for IT Professionals' course, focusing on English communication skills for software development, information technology, and professional workplace environments.",
+            id: "Berhasil menyelesaikan kursus 'English for IT Professionals' yang berfokus pada keterampilan komunikasi bahasa Inggris untuk pengembangan perangkat lunak, teknologi informasi, dan lingkungan kerja profesional.",
+        },
 
         image: englishCertificate,
     },
@@ -142,15 +195,22 @@ export const honorsAchievements = [
 
         type: "Award",
 
-        title: "Bronze Medal - International Capstone Expo 2024",
+        title: {
+            en: "Bronze Medal – International Capstone Expo 2024",
+            id: "Medali Perunggu – International Capstone Expo 2024",
+        },
 
-        issuer:
-            "Department of Electrical Engineering and Informatics, Universitas Negeri Malang",
+        issuer: {
+            en: "Department of Electrical Engineering and Informatics, State University of Malang",
+            id: "Departemen Teknik Elektro dan Informatika, Universitas Negeri Malang",
+        },
 
         year: "2024",
 
-        description:
-            "Received the Bronze Award at the International Capstone Expo 2024 for the 'Isna Collection' project under the theme 'Technology for Society', recognizing innovation, teamwork, and practical software development.",
+        description: {
+            en: "Received the Bronze Award at the International Capstone Expo 2024 for the 'Isna Collection' project under the theme 'Technology for Society', recognizing innovation, teamwork, and practical software development.",
+            id: "Meraih Penghargaan Perunggu pada International Capstone Expo 2024 untuk proyek 'Isna Collection' dengan tema 'Technology for Society', sebagai pengakuan atas inovasi, kerja sama tim, dan pengembangan perangkat lunak yang praktis.",
+        },
 
         image: capstoneAward,
     },

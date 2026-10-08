@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 
+import useLang from "../../i18n/useLang";
+
 export default function ProjectTimeline({ start, end }) {
+  const { t } = useLang();
+
   return (
     <div>
       {/* Title */}
@@ -14,7 +18,7 @@ export default function ProjectTimeline({ start, end }) {
           text-gold
         "
       >
-        Quest Timeline
+        {t("project.questTimeline")}
       </p>
 
       {/* Timeline */}
@@ -39,11 +43,11 @@ export default function ProjectTimeline({ start, end }) {
         <div className="relative flex justify-between">
           {/* Start */}
 
-          <TimelineNode title="Quest Started" value={start} />
+          <TimelineNode title={t("project.questStarted")} value={start} />
 
           {/* End */}
 
-          <TimelineNode title="Quest Cleared" value={end} />
+          <TimelineNode title={t("project.questCleared")} value={end} />
         </div>
       </div>
     </div>
