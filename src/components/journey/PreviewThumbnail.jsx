@@ -38,6 +38,7 @@ export default function PreviewThumbnail({
         <img
           src={image}
           alt={title}
+          loading="lazy"
           className="
             aspect-video
             w-full

@@ -39,6 +39,7 @@ export default function About() {
           <img
             src={dimas2}
             alt="Potret Dimas Maulana Ramadhan"
+            loading="lazy"
             className="absolute inset-0 w-full h-full object-cover object-top"
           />
         </div>

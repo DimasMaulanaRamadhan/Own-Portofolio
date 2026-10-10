@@ -58,6 +58,7 @@ export default function ProjectCard({
                   <img
                     src={images[0]}
                     alt={`${project.name} Screenshot 1`}
+                    loading="lazy"
                     className="aspect-video w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
@@ -82,6 +83,7 @@ export default function ProjectCard({
                   <img
                     src={images[1] || images[0]}
                     alt={`${project.name} Screenshot 2`}
+                    loading="lazy"
                     className="aspect-video w-full object-cover transition duration-700 group-hover:scale-110"
                   />
 
