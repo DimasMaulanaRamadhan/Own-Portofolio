@@ -19,7 +19,7 @@ const projects = [
 
     category: { en: "Game Development", id: "Pengembangan Game" },
 
-    role: { en: "Gameplay Programmer", id: "Gameplay Programmer" },
+    role: { en: "Game Designer", id: "Perancang Game" },
 
     rank: "Ultimate",
 
